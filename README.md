@@ -103,7 +103,7 @@ The app includes the following functions:
 
 The API provided by [Foreign exchange rates API](https://exchangeratesapi.io), which responses the following `json` data.
 
-```json
+```js
 // GET https://api.exchangeratesapi.io/latest HTTP/1.1
 
 {
