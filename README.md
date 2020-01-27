@@ -97,7 +97,7 @@ The app includes the following functions:
 - Check if user has enough money before exchanging.
 - Flexible API error handling and loading status as below.
 
-<img width="322" alt="loading" src="https://user-images.githubusercontent.com/21308003/73167109-36190100-4132-11ea-8668-12ce6d46358a.png"> <img width="322" alt="error" src="https://user-images.githubusercontent.com/21308003/73167115-3913f180-4132-11ea-87ac-69ee34223dbd.png">
+<img width="280" alt="loading" src="https://user-images.githubusercontent.com/21308003/73167109-36190100-4132-11ea-8668-12ce6d46358a.png"> <img width="280" alt="error" src="https://user-images.githubusercontent.com/21308003/73167115-3913f180-4132-11ea-87ac-69ee34223dbd.png">
 
 ## API
 
