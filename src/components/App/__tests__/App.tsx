@@ -46,17 +46,11 @@ describe("<App />", () => {
     // The extra 3 times are called when component did mount
     expect(dispatch).toBeCalledTimes(times * 3 + 3);
     // @ts-ignore
-    expect(dispatch.mock.calls[0][0].toString()).toBe(
-      fetchRate("EUR").toString()
-    );
+    expect(dispatch.mock.calls[0][0].toString()).toBe(fetchRate("EUR").toString());
     // @ts-ignore
-    expect(dispatch.mock.calls[0][0].toString()).toBe(
-      fetchRate("GBP").toString()
-    );
+    expect(dispatch.mock.calls[0][0].toString()).toBe(fetchRate("GBP").toString());
     // @ts-ignore
-    expect(dispatch.mock.calls[0][0].toString()).toBe(
-      fetchRate("USD").toString()
-    );
+    expect(dispatch.mock.calls[0][0].toString()).toBe(fetchRate("USD").toString());
   });
 
   it("should disable exchange when input value is empty", () => {
