@@ -138,7 +138,7 @@ I spent a lot of time to think the test cases and try to cover all of them as po
 
 ## Continuous Development
 
-Netlify provide an [auto deploy feature](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) by default. Which means once you push a new commit to your production branch, it'll setup the CI/CD for you. But I didn't rely on it, because I wish the deploy be a part of my Travis-CI flow (for someday I exceed the free trial quota, I can switch to other services quickly, just kidding). Therefore, I integrated the [Netlify CLI](https://cli.netlify.com/commands/deploy) with my Travis-CI for continuous development. You can [check it out](https://github.com/wellyshen/welly-exchange/blob/master/.travis.yml).
+Netlify provide an [auto deploy feature](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) by default. Which means once you push a new commit to your production branch, it'll setup the CI/CD for you. But I didn't rely on it, because I wish the deploy to be a part of my Travis-CI flow (for someday I exceed the free trial quota, I can switch to other services quickly, just kidding). Therefore, I integrated the [Netlify CLI](https://cli.netlify.com/commands/deploy) with my Travis-CI for continuous development. You can [check it out](https://github.com/wellyshen/welly-exchange/blob/master/.travis.yml).
 
 ## Know More About Welly
 
