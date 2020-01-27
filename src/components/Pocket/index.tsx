@@ -59,7 +59,7 @@ const Pocket = ({
 
   const getInputVal = (rate: number) => {
     if (!inputVal.length) return "";
-    // When user enter "." prepend zero for better UX
+    // When user enter "." at the beginning, pre-pend zero for better UX
     if (inputVal === ".") inputVal = "0" + inputVal;
 
     const preFix = isExchangeIn ? "+" : "-";
