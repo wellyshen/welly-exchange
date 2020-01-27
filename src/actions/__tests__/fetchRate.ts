@@ -6,7 +6,7 @@ import {
   GBP_RATE_FAILURE
 } from "../../types";
 import { initialState } from "../../reducers/gbpRate";
-import { testHelper, gbpRateData } from "../../utils/test";
+import { testHelper, gbpRateData, error } from "../../utils/test";
 import fetchRate from "../fetchRate";
 
 jest.mock("axios");
@@ -41,8 +41,22 @@ describe("fetchRate action", () => {
     expect(getActions()).toEqual(expectedActions);
   });
 
+  it("creates nothing when data has already been fetched and fail to update", async () => {
+    global.console.error = jest.fn();
+    const { dispatch, getActions } = testHelper({
+      gbpRate: { ...initialState, readyStatus: "success" }
+    });
+
+    // @ts-ignore
+    axios.get.mockRejectedValue(error);
+
+    // @ts-ignore
+    await dispatch(fetchRate("GBP"));
+    expect(getActions()).toEqual([]);
+    expect(console.error).toBeCalledWith("> fetchRate action: ", error);
+  });
+
   it("creates *_RATE_REQUESTING and *_RATE_FAILURE when fail to fetch data", async () => {
-    const error = "Request failed with status code 404";
     const { dispatch, getActions } = testHelper({ gbpRate: initialState });
     const expectedActions = [
       { type: GBP_RATE_REQUESTING },
@@ -50,7 +64,7 @@ describe("fetchRate action", () => {
     ];
 
     // @ts-ignore
-    axios.get.mockRejectedValue({ message: error });
+    axios.get.mockRejectedValue(error);
 
     // @ts-ignore
     await dispatch(fetchRate("GBP"));

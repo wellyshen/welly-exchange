@@ -32,3 +32,5 @@ export const usdRateData = {
   base: "USD",
   date: "2020-01-24"
 };
+
+export const error = { message: "Request failed with status code 404" };
