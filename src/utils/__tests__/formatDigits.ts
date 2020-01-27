@@ -20,7 +20,7 @@ describe("formatDigits", () => {
     expect(result).toBe("100.15");
 
     result = formatDigits(100.15);
-    expect(result).toBe(`${100.15}`);
+    expect(result).toBe("100.15");
   });
 
   it("should do format if decimal > 2", () => {
@@ -28,7 +28,7 @@ describe("formatDigits", () => {
     expect(result).toBe("100.16");
 
     result = formatDigits(100.156);
-    expect(result).toBe(`${100.16}`);
+    expect(result).toBe("100.16");
   });
 
   it('should work correctly base on the "decimal" parameter', () => {
