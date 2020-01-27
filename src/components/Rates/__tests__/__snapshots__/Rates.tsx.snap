@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rates /> should render failure status correctly 1`] = `
+<button
+  class="rates"
+  data-testid="rates"
+>
+  Error, tap to retry
+</button>
+`;
+
+exports[`<Rates /> should render request status correctly 1`] = `
+<button
+  class="rates"
+  data-testid="rates"
+  disabled=""
+>
+  Loading...
+</button>
+`;
+
+exports[`<Rates /> should render success status correctly 1`] = `
+<button
+  class="rates"
+  data-testid="rates"
+  disabled=""
+>
+  £1 = €1.1861
+</button>
+`;

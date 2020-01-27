@@ -1,0 +1,72 @@
+@import "../../theme/variables";
+
+.app {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background: $color-blue;
+
+    .exchange {
+      position: absolute;
+      right: 3vw;
+      border: none;
+      font-size: 1.25rem;
+      color: $color-white;
+      background: none;
+      cursor: pointer;
+
+      &[disabled] {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  // Override the style of Carousel component
+  :global(.slider) {
+    background: $color-blue;
+
+    &:first-child {
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -20px;
+        width: 0;
+        height: 0;
+        border-top: solid 20px $color-blue;
+        border-left: solid 20px transparent;
+        border-right: solid 20px transparent;
+      }
+    }
+
+    &:nth-child(2) {
+      background: darken($color-blue, 15%);
+    }
+
+    :global(.slider-control-centerleft),
+    :global(.slider-control-centerright) {
+      display: none;
+    }
+
+    :global(.slider-control-bottomcenter) ul {
+      top: -20px !important;
+    }
+
+    svg {
+      width: 10px;
+      height: 10px;
+
+      circle {
+        cx: 5px;
+        cy: 5px;
+        r: 5px;
+        fill: white !important;
+      }
+    }
+  }
+}

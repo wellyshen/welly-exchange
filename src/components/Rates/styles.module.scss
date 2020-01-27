@@ -1,0 +1,14 @@
+@import "../../theme/variables";
+
+.rates {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: $color-white;
+  background: darken($color-blue, 15%);
+  cursor: pointer;
+
+  &:hover {
+    background: darken($color-blue, 10%);
+  }
+}

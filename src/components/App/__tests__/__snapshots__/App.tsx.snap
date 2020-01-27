@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render correctly 1`] = `
+<div
+  class="app"
+>
+  <div
+    class="header"
+  >
+    <button
+      class="rates"
+      data-testid="rates"
+      disabled=""
+    >
+      £1 = €1.1861
+    </button>
+    <button
+      class="exchange"
+      data-testid="exchange"
+      disabled=""
+    >
+      Exchange
+    </button>
+  </div>
+  <div>
+    <div
+      class="slider"
+      style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
+    >
+      <div
+        aria-atomic="true"
+        aria-live="polite"
+        style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;"
+        tabindex="-1"
+      >
+        Slide 1 of 3
+      </div>
+      <div
+        class="slider-frame"
+        style="box-sizing: border-box; display: block; height: 100%; margin: 0px; overflow: hidden; padding: 0px; position: relative; transform: translate3d(0, 0, 0);"
+      >
+        <ul
+          class="slider-list"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
+        >
+          <li
+            class="slider-slide slide-visible"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  GBP
+                </div>
+                <div>
+                  You have £100.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  USD
+                </div>
+                <div>
+                  You have $110.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  EUR
+                </div>
+                <div>
+                  You have €120.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="slider-control-centerleft"
+        style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%);"
+      >
+        <button
+          aria-label="previous"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+      <div
+        class="slider-control-centerright"
+        style="position: absolute; top: 50%; right: 0px; transform: translateY(-50%);"
+      >
+        <button
+          aria-label="next"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+      <div
+        class="slider-control-bottomcenter"
+        style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%);"
+      >
+        <ul
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              style="cursor: pointer; opacity: 1; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="paging-item"
+          >
+            <button
+              aria-label="slide 2 bullet"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="paging-item"
+          >
+            <button
+              aria-label="slide 3 bullet"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <style
+        type="text/css"
+      >
+        .slider-slide &gt; img { width: 100%; display: block; }
+          .slider-slide &gt; img:focus { margin: auto; }
+      </style>
+    </div>
+    <div
+      class="slider"
+      style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
+    >
+      <div
+        aria-atomic="true"
+        aria-live="polite"
+        style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;"
+        tabindex="-1"
+      >
+        Slide 1 of 3
+      </div>
+      <div
+        class="slider-frame"
+        style="box-sizing: border-box; display: block; height: 100%; margin: 0px; overflow: hidden; padding: 0px; position: relative; transform: translate3d(0, 0, 0);"
+      >
+        <ul
+          class="slider-list"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
+        >
+          <li
+            class="slider-slide slide-visible"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  EUR
+                </div>
+                <div>
+                  You have €120.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+                <div
+                  data-testid="rate-info"
+                >
+                  €1 = £0.84
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  GBP
+                </div>
+                <div>
+                  You have £100.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+                <div
+                  data-testid="rate-info"
+                >
+                  £1 = £1
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
+          >
+            <div
+              class="pocket"
+            >
+              <div>
+                <div
+                  class="base"
+                >
+                  USD
+                </div>
+                <div>
+                  You have $110.66
+                </div>
+              </div>
+              <div
+                class="inputWrapper"
+              >
+                <input
+                  class="input"
+                  data-testid="input"
+                  type="text"
+                  value=""
+                />
+                <div
+                  data-testid="rate-info"
+                >
+                  $1 = £0.76
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="slider-control-centerleft"
+        style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%);"
+      >
+        <button
+          aria-label="previous"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Prev
+        </button>
+      </div>
+      <div
+        class="slider-control-centerright"
+        style="position: absolute; top: 50%; right: 0px; transform: translateY(-50%);"
+      >
+        <button
+          aria-label="next"
+          disabled=""
+          style="border: 0px; background: rgba(0, 0, 0, 0.4); color: white; padding: 10px; text-transform: uppercase; opacity: 0.3; cursor: not-allowed;"
+          type="button"
+        >
+          Next
+        </button>
+      </div>
+      <div
+        class="slider-control-bottomcenter"
+        style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%);"
+      >
+        <ul
+          style="position: relative; top: -10px; display: flex; margin: 0px; padding: 0px; list-style-type: none;"
+        >
+          <li
+            class="paging-item active"
+          >
+            <button
+              aria-label="slide 1 bullet"
+              style="cursor: pointer; opacity: 1; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="paging-item"
+          >
+            <button
+              aria-label="slide 2 bullet"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+          <li
+            class="paging-item"
+          >
+            <button
+              aria-label="slide 3 bullet"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
+              type="button"
+            >
+              <svg
+                class="paging-dot"
+                height="6"
+                width="6"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  style="fill: black;"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <style
+        type="text/css"
+      >
+        .slider-slide &gt; img { width: 100%; display: block; }
+          .slider-slide &gt; img:focus { margin: auto; }
+      </style>
+    </div>
+  </div>
+</div>
+`;

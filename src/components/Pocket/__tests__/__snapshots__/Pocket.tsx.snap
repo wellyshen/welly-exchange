@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pocket /> should render failure status correctly 1`] = `
+<div
+  class="pocket"
+>
+  <div>
+    <div
+      class="base"
+    >
+      EUR
+    </div>
+    <div>
+      You have €120.66
+    </div>
+  </div>
+  <div
+    class="inputWrapper"
+  >
+    <div
+      class="base"
+      data-testid="retry-input"
+    >
+      Error, tap to retry
+    </div>
+    <div
+      data-testid="rate-info"
+    >
+      <div
+        data-testid="retry-rate"
+      >
+        Error, tap to retry
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Pocket /> should render request status correctly 1`] = `
+<div
+  class="pocket"
+>
+  <div>
+    <div
+      class="base"
+    >
+      EUR
+    </div>
+    <div>
+      You have €120.66
+    </div>
+  </div>
+  <div
+    class="inputWrapper"
+  >
+    <div
+      class="base"
+    >
+      Loading...
+    </div>
+    <div
+      data-testid="rate-info"
+    >
+      Loading...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Pocket /> should render success status correctly 1`] = `
+<div
+  class="pocket"
+>
+  <div>
+    <div
+      class="base"
+    >
+      EUR
+    </div>
+    <div>
+      You have €120.66
+    </div>
+  </div>
+  <div
+    class="inputWrapper"
+  >
+    <input
+      class="input"
+      data-testid="input"
+      type="text"
+      value="+1.19"
+    />
+    <div
+      data-testid="rate-info"
+    >
+      €1 = £0.84
+    </div>
+  </div>
+</div>
+`;
