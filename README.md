@@ -99,6 +99,8 @@ The app includes the following functions:
 
 <img width="280" alt="loading" src="https://user-images.githubusercontent.com/21308003/73167109-36190100-4132-11ea-8668-12ce6d46358a.png"> <img width="280" alt="error" src="https://user-images.githubusercontent.com/21308003/73167115-3913f180-4132-11ea-87ac-69ee34223dbd.png">
 
+> 💡 This project supports [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension). You can install it to check the API updating feature.
+
 ## API
 
 The API provided by [Foreign exchange rates API](https://exchangeratesapi.io), which responses the following `json` data.
