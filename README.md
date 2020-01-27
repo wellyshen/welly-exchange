@@ -13,8 +13,8 @@ Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. Th
 - 🎣 Based functional components and [Hooks](https://reactjs.org/docs/hooks-intro.html).
 - 💅🏻 Using [Sass](https://sass-lang.com) and [CSS modules](https://github.com/gajus/react-css-modules) for styling.
 - 🧐 Runtime type-checks via [Typescript](https://www.typescriptlang.org).
-- 🧪 Unit test via [Jest](https://jestjs.io) and [React Test Library](https://testing-library.com/docs/react-testing-library/intro).
-- 🤖 Integrating [Travis-CI](https://travis-ci.com) and [Netlify](https://www.netlify.com) for continuous development.
+- 🧪 Using [Jest](https://jestjs.io) and [React Test Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing.
+- 🤖 Integrating [Travis-CI](https://travis-ci.com) with [Netlify](https://www.netlify.com) for continuous development.
 
 ## Requirements
 
