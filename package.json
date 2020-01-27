@@ -6,10 +6,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:cov": "yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/serviceWorker.js",
+      "!src/store/index.ts",
+      "!src/index.tsx"
+    ]
   },
   "browserslist": {
     "production": [
