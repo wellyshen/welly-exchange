@@ -23,7 +23,7 @@ const Rates = ({ base, exchangeTo }: Props) => {
     dispatch(fetchRate(base));
   };
 
-  const renderContent = () => {
+  const renderLabel = () => {
     switch (readyStatus) {
       case "success":
         let rate = data.rates[exchangeTo] || 1;
@@ -44,7 +44,7 @@ const Rates = ({ base, exchangeTo }: Props) => {
       onClick={handleRetry}
       disabled={readyStatus !== "failure"}
     >
-      {renderContent()}
+      {renderLabel()}
     </button>
   );
 };
