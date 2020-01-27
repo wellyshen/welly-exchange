@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, act, fireEvent } from "@testing-library/react";
 
 import {
   testHelper,
@@ -11,6 +11,7 @@ import fetchRate from "../../../actions/fetchRate";
 import App, { errorMsg, doneMsg } from "..";
 
 describe("<App />", () => {
+  jest.useFakeTimers();
   window.alert = jest.fn();
 
   const renderHelper = () => {
@@ -33,13 +34,23 @@ describe("<App />", () => {
     };
   };
 
-  it("should render correctly", () => {
+  it("should render correctly before changing pocket", () => {
     const { container } = renderHelper();
     expect(container).toMatchSnapshot();
   });
 
+  it("should render correctly after changing pocket", () => {
+    const { container, getAllByLabelText } = renderHelper();
+    const bottomCenterDot = getAllByLabelText("slide 2 bullet")[1];
+    fireEvent.click(bottomCenterDot);
+    act(() => {
+      // Immediately execute the "afterSlide" event of Carousel component
+      jest.runOnlyPendingTimers();
+    });
+    expect(container).toMatchSnapshot();
+  });
+
   it("should update data for every 10 seconds", () => {
-    jest.useFakeTimers();
     const { dispatch } = renderHelper();
     const times = 3;
     jest.advanceTimersByTime(times * 10 * 1000);
