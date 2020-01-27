@@ -1,6 +1,6 @@
 # Welly Exchange
 
-Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. It's very interesting and I have learned a lot by implementing it 👍🏻
+Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. The topic is interesting and I have learned a lot from it 👍🏻
 
 ⚡️ Live demo: https://welly-exchange.netlify.com
 
