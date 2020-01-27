@@ -11,6 +11,10 @@
     "eject": "react-scripts eject",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
