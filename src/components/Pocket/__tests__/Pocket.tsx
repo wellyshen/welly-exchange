@@ -108,7 +108,7 @@ describe("<Pocket />", () => {
     expect(getAllByTestId("input")[2].value).toBe("+1.67");
   });
 
-  it('should auto add leading zero when user input "."', () => {
+  it('should auto pre-pend zero when user input "." at the beginning', () => {
     const { getByTestId } = renderHelper({ props: { inputVal: "." } });
     // @ts-ignore
     expect(getByTestId("input").value).toBe("+0");
