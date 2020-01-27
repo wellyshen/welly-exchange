@@ -7,6 +7,7 @@ import {
   eurRateData,
   usdRateData
 } from "../../../utils/test";
+import fetchRate from "../../../actions/fetchRate";
 import App, { errorMsg, doneMsg } from "..";
 
 describe("<App />", () => {
@@ -26,6 +27,7 @@ describe("<App />", () => {
 
     return {
       ...others,
+      test: container,
       container: container.firstChild,
       dispatch
     };
@@ -34,6 +36,27 @@ describe("<App />", () => {
   it("should render correctly", () => {
     const { container } = renderHelper();
     expect(container).toMatchSnapshot();
+  });
+
+  it("should update data for every 10 seconds", () => {
+    jest.useFakeTimers();
+    const { dispatch } = renderHelper();
+    const times = 3;
+    jest.advanceTimersByTime(times * 10 * 1000);
+    // The extra 3 times are called when component did mount
+    expect(dispatch).toBeCalledTimes(times * 3 + 3);
+    // @ts-ignore
+    expect(dispatch.mock.calls[0][0].toString()).toBe(
+      fetchRate("EUR").toString()
+    );
+    // @ts-ignore
+    expect(dispatch.mock.calls[0][0].toString()).toBe(
+      fetchRate("GBP").toString()
+    );
+    // @ts-ignore
+    expect(dispatch.mock.calls[0][0].toString()).toBe(
+      fetchRate("USD").toString()
+    );
   });
 
   it("should disable exchange when input value is empty", () => {
