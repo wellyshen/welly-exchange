@@ -3,7 +3,7 @@ import {
   EUR_RATE_SUCCESS,
   EUR_RATE_FAILURE
 } from "../../types";
-import { eurRateData } from "../../utils/test";
+import { eurRateData, error } from "../../utils/test";
 import eurRate, { initialState } from "../eurRate";
 
 describe("eurRate reducer", () => {
@@ -13,31 +13,17 @@ describe("eurRate reducer", () => {
   });
 
   it("should handle EUR_RATE_REQUESTING correctly", () => {
-    expect(eurRate(undefined, { type: EUR_RATE_REQUESTING })).toEqual({
-      ...initialState,
-      readyStatus: "request"
-    });
+    expect(eurRate(undefined, { type: EUR_RATE_REQUESTING }))
+      .toEqual({ ...initialState, readyStatus: "request", error: null });
   });
 
   it("should handle EUR_RATE_SUCCESS correctly", () => {
-    expect(eurRate(undefined, { type: EUR_RATE_SUCCESS, data: eurRateData })).toEqual({
-      ...initialState,
-      readyStatus: "success",
-      data: eurRateData
-    });
+    expect(eurRate(undefined, { type: EUR_RATE_SUCCESS, data: eurRateData }))
+      .toEqual({ ...initialState, readyStatus: "success", data: eurRateData });
   });
 
   it("should handle EUR_RATE_FAILURE correctly", () => {
-    const error = "Oops! something went wrong.";
-    expect(
-      eurRate(undefined, {
-        type: EUR_RATE_FAILURE,
-        error
-      })
-    ).toEqual({
-      ...initialState,
-      readyStatus: "failure",
-      error
-    });
+    expect(eurRate(undefined, { type: EUR_RATE_FAILURE, error }))
+      .toEqual({ ...initialState, readyStatus: "failure", error });
   });
 });

@@ -18,7 +18,8 @@ export default (state = initialState, action: RateAction) => {
     case EUR_RATE_REQUESTING:
       return {
         ...state,
-        readyStatus: "request"
+        readyStatus: "request",
+        error: null
       };
     case EUR_RATE_SUCCESS:
       return {
