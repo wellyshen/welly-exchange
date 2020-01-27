@@ -1,0 +1,31 @@
+language: node_js
+
+node_js:
+  - "lts/*"
+
+cache:
+  yarn: true
+  directories:
+    - node_module
+
+script:
+  - yarn lint
+  - yarn test:cov
+
+notifications:
+  email:
+    on_failure: change
+
+after_success:
+  - yarn coveralls
+
+before_deploy:
+  - yarn global add netlify-cli
+  - yarn build
+
+deploy:
+  provider: script
+  script: netlify deploy --prod  --message "Deploy from Travis-CI" --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir ./build
+  skip_cleanup: true
+  on:
+    branch: master
