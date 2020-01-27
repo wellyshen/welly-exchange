@@ -73,8 +73,7 @@ describe("<Pocket />", () => {
     // @ts-ignore
     expect(getAllByTestId("input")[0].value).toBe("+1.19");
 
-    getAllByTestId = renderHelper({ props: { isExchangeIn: false } })
-      .getAllByTestId;
+    getAllByTestId = renderHelper({ props: { isExchangeIn: false } }).getAllByTestId;
     // @ts-ignore
     expect(getAllByTestId("input")[1].value).toBe("-1.19");
   });
@@ -84,8 +83,7 @@ describe("<Pocket />", () => {
     // @ts-ignore
     expect(getAllByTestId("input")[0].value).toBe("+1.19");
 
-    getAllByTestId = renderHelper({ props: { exchangeDisabled: true } })
-      .getAllByTestId;
+    getAllByTestId = renderHelper({ props: { exchangeDisabled: true } }).getAllByTestId;
     // @ts-ignore
     expect(getAllByTestId("input")[1].value).toBe("+1");
   });
@@ -120,7 +118,7 @@ describe("<Pocket />", () => {
     const onInputChange = jest.fn();
     const { getByTestId } = renderHelper({ props: { onInputChange } });
     // Make sure input value is valid
-    const e = { target: { value: " +-abc100...66" } };
+    const e = { target: { value: "+- abc100...66" } };
     fireEvent.change(getByTestId("input"), e);
     expect(onInputChange).toBeCalledWith("100.66");
   });
