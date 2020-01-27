@@ -36,6 +36,8 @@ export default () => {
   const [inIdx, setInIdx] = useState(0);
   const [whichInput, setWhichInput] = useState("");
   const [inputVal, setInputVal] = useState("");
+  const outPocket = outPockets[outIdx];
+  const inPocket = inPockets[inIdx];
 
   useEffect(() => {
     if (!hasFetchData) {
@@ -59,8 +61,7 @@ export default () => {
   }, [hasFetchData, dispatch]);
 
   const handleExchange = () => {
-    const msg =
-      parseFloat(inputVal) > outPockets[outIdx].deposit ? errorMsg : doneMsg;
+    const msg = parseFloat(inputVal) > outPocket.deposit ? errorMsg : doneMsg;
 
     alert(msg);
     setInputVal("");
@@ -81,9 +82,7 @@ export default () => {
         key={id}
         base={base}
         deposit={deposit}
-        exchangeTo={
-          isExchangeIn ? outPockets[outIdx].base : inPockets[inIdx].base
-        }
+        exchangeTo={isExchangeIn ? outPocket.base : inPocket.base}
         exchangeDisabled={
           isExchangeIn
             ? whichInput === "EXCHANGE_IN"
@@ -100,10 +99,7 @@ export default () => {
   return (
     <div className={styles.app}>
       <div className={styles.header}>
-        <Rates
-          base={outPockets[outIdx].base}
-          exchangeTo={inPockets[inIdx].base}
-        />
+        <Rates base={outPocket.base} exchangeTo={inPocket.base} />
         <button
           data-testid="exchange"
           className={styles.exchange}
