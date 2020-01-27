@@ -1,4 +1,149 @@
 # Welly Exchange
 
+Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. It's very interesting and I have learned a lot by implementing it 👍🏻
+
+⚡️ Live demo: https://welly-exchange.netlify.com
+
 [![build status](https://img.shields.io/travis/wellyshen/welly-exchange/master?style=flat-square)](https://travis-ci.org/wellyshen/welly-exchange)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/welly-exchange?style=flat-square)](https://coveralls.io/github/wellyshen/welly-exchange?branch=master)
+
+## Features
+
+- ⚛️ Made by [React](https://reactjs.org) and [Redux](https://redux.js.org).
+- 🎣 Base on functional components and [Hooks](https://reactjs.org/docs/hooks-intro.html).
+- 💅🏻 Style by [Sass](https://sass-lang.com) and [CSS modules](https://github.com/gajus/react-css-modules).
+- 🧐 Runtime type-checks via [Typescript](https://www.typescriptlang.org).
+- 🧪 Unit test via [Jest](https://jestjs.io) and [React Test Library](https://testing-library.com/docs/react-testing-library/intro).
+- 🤖 Integrating [Travis-CI](https://travis-ci.com) and [Netlify](https://www.netlify.com) for continuous development.
+
+## Requirements
+
+- [node](https://nodejs.org/en/) >= 10.0
+- [npm](https://www.npmjs.com/) >= 6.0
+
+## Getting Started
+
+You can start by cloning the repository on your local machine by running:
+
+```sh
+git clone https://github.com/wellyshen/welly-exchange.git
+cd welly-exchange
+```
+
+Then install all of the dependencies:
+
+```sh
+yarn install
+# or
+npm install
+```
+
+Run it:
+
+```sh
+yarn start
+# or
+npm start
+```
+
+Now the app should be running at [http://localhost:3000](http://localhost:3000)
+
+## Script Commands
+
+You can explore this app via the following commands.
+
+| Key        | Description                                             |
+| ---------- | ------------------------------------------------------- |
+| `start`    | Runs app on the development server at `localhost:3000`. |
+| `build`    | Builds the app.                                         |
+| `test`     | Runs test in the interactive watch mode.                |
+| `test:cov` | Runs test once with coverage report.                    |
+| `lint`     | Checks coding style via eslint.                         |
+
+## Project Overview
+
+The structure of the app.
+
+```
+.
+└── src                 # App source code
+    ├── components      # App components
+    │   ├── App         # Entry component (include testing)
+    │   ├── Rates       # Main rate information (include testing)
+    │   └── Pocket      # Pocket component (include testing)
+    ├── actions         # Redux action creator (include testing)
+    ├── reducers        # Redux reducers (include testing)
+    ├── store           # Redux configure store
+    ├── utils           # Useful tools like format-digits, test-helper etc. (include testing)
+    ├── types           # Shared types
+    ├── theme           # App root styles and shared variables
+    └── index.ts        # App entry point
+```
+
+## Component Overview
+
+The composition of the app as below.
+
+<img width="370" alt="app" src="https://user-images.githubusercontent.com/21308003/73160834-09122180-4125-11ea-987f-0e7ae623fe34.png">
+
+## Implementation
+
+The app includes the following functions:
+
+- Auto update API every 10 seconds.
+- Dynamic rate information for GBP, EUR, USD.
+- Live rate exchange between GBP, EUR, USD.
+- Validating and formating input value (e.g. legal characters, auto leading zero, two digits after dot etc.).
+- Check if user has enough money before exchanging.
+- Flexible API error handling and loading status as below.
+
+<img width="240" alt="loading" src="https://user-images.githubusercontent.com/21308003/73160854-15967a00-4125-11ea-9978-d878aca39612.png">
+<img width="240" alt="error" src="https://user-images.githubusercontent.com/21308003/73160843-0fa09900-4125-11ea-96b9-a1bab1542a5b.png">
+
+## API
+
+The API provided by [Foreign exchange rates API](https://exchangeratesapi.io), which responses the following `json` data.
+
+```json
+// GET https://api.exchangeratesapi.io/latest HTTP/1.1
+
+{
+  "base": "EUR",
+  "date": "2018-04-08",
+  "rates": {
+    "CAD": 1.565,
+    "CHF": 1.1798,
+    "GBP": 0.87295,
+    "SEK": 10.2983,
+    "EUR": 1.092,
+    "USD": 1.2234,
+    ...
+  }
+}
+```
+
+## App Starter
+
+This is a static web app which based on Facebook's [create-react-app](https://github.com/facebook/create-react-app).
+
+## Unit Testing
+
+My unit testing cover the following parts:
+
+- [All self-made components](https://github.com/wellyshen/welly-exchange/tree/master/src/components).
+- [Redux action](https://github.com/wellyshen/welly-exchange/tree/master/src/actions).
+- [Redux reducers](https://github.com/wellyshen/welly-exchange/tree/master/src/reducers).
+- [Utils](https://github.com/wellyshen/welly-exchange/tree/master/src/utils).
+
+## Continuous Development
+
+Netlify provide an [auto deploy feature](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) by default. Which means once you push a new commit to your production branch, it'll setup the CI/CD for you. But I didn't rely on it, because I wish the deploy be a part of my Travis-CI flow (for someday I exceed the free trial quota, I can switch to other services quickly, just kidding). Therefore, I integrated the [Netlify CLI](https://cli.netlify.com/commands/deploy) with my Travis-CI for continuous development. You can [check it out](https://github.com/wellyshen/welly-exchange/blob/master/.travis.yml).
+
+## Know More About Welly
+
+In my spare time, I like to contribute and maintain OSS for making people coding happier. You can check the following repositories to know more about me.
+
+- 😎🐣 [react-cool-starter](https://github.com/wellyshen/react-cool-starter): A React SSR boilerplate.
+- 😎🏞 [react-cool-img](https://github.com/wellyshen/react-cool-img): A React <Img /> component let you handle image UX and performance as a Pro! (Collected by [CSS-Tricks](https://css-tricks.com/third-party-components-at-their-best))
+- 😎🖱 [react-cool-onclickoutside](https://github.com/wellyshen/react-cool-onclickoutside): A React hook to listen for clicks outside of the component(s). (Collected by [React Status](https://twitter.com/reactdaily/status/1220032630172934144?s=20))
+- 😎📍 [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete): React hook for Google Maps Places Autocomplete. (In progress)
