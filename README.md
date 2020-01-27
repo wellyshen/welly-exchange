@@ -129,7 +129,7 @@ This is a static web app which based on Facebook's [create-react-app](https://gi
 
 ## Unit Testing
 
-I spent a lot of time to think the test cases and try to cover all of them as possible as I can. My unit testing covers the following parts.
+The Revolut app isn't available in my country (TW). I checked the YouTube video many times and spent a lot of time to think the test cases. My unit testing covers the following parts.
 
 - [All self-made components](https://github.com/wellyshen/welly-exchange/tree/master/src/components).
 - [Redux action](https://github.com/wellyshen/welly-exchange/tree/master/src/actions).
