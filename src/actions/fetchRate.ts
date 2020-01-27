@@ -55,7 +55,7 @@ export default (base: Base): ThunkAction => async (
   } catch (error) {
     // When update data, we don't need to change the "readyStatus"
     targetState.readyStatus !== "success"
-      ? dispatch({ type: failureType, error: error.message })
+      ? dispatch({ type: failureType, error })
       : console.error("> fetchRate action: ", error);
   }
 };
