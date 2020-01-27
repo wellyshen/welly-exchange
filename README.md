@@ -93,7 +93,7 @@ The app includes the following functions:
 - Auto update API every 10 seconds.
 - Dynamic rate information for GBP, EUR, USD.
 - Live rate exchange between GBP, EUR, USD.
-- Validating and formating input value (e.g. legal characters, auto leading zero, two digits after dot etc.).
+- Validating and formating input value (e.g. legal characters, auto pre-pend zero, two digits after dot etc.).
 - Check if user has enough money before exchanging.
 - Flexible API error handling and loading status as below.
 
