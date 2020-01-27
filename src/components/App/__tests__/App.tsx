@@ -43,7 +43,7 @@ describe("<App />", () => {
     const { dispatch } = renderHelper();
     const times = 3;
     jest.advanceTimersByTime(times * 10 * 1000);
-    // The extra 3 times are called when component did mount
+    // The extra 3 times are called when componentDidMount
     expect(dispatch).toBeCalledTimes(times * 3 + 3);
     // @ts-ignore
     expect(dispatch.mock.calls[0][0].toString()).toBe(fetchRate("EUR").toString());
