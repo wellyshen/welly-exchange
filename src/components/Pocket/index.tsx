@@ -41,6 +41,7 @@ const Pocket = ({
   // See: https://github.com/FormidableLabs/nuka-carousel/issues/406
   const handleInputClick = () => {
     // @ts-ignore
+    // istanbul ignore next
     inputRef.current.focus();
   };
 
