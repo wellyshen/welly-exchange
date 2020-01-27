@@ -42,12 +42,10 @@ export default (base: Base): ThunkAction => async (
   dispatch: ThunkDispatch,
   getState: ThunkState
 ) => {
-  const { requestType, successType, failureType, queries } = (symbols as any)[
-    base
-  ];
   const targetState = (getState() as any)[`${base.toLowerCase()}Rate`];
+  const { requestType, successType, failureType, queries } = (symbols as any)[base];
 
-  // Update data without changing the readyStatus of data
+  // When update data, we don't need to change the "readyStatus"
   if (targetState.readyStatus !== "success") dispatch({ type: requestType });
 
   try {
@@ -55,7 +53,7 @@ export default (base: Base): ThunkAction => async (
 
     dispatch({ type: successType, data });
   } catch (error) {
-    // Update data without changing the readyStatus of data
+    // When update data, we don't need to change the "readyStatus"
     targetState.readyStatus !== "success"
       ? dispatch({ type: failureType, error: error.message })
       : console.error("> fetchRate action: ", error);
