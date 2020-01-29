@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import Carousel from "nuka-carousel";
 
@@ -10,34 +10,41 @@ import styles from "./styles.module.scss";
 
 interface Pocket {
   id: string;
-  deposit: number;
   base: Base;
 }
 
 const outPockets: Pocket[] = [
-  { id: "p-1", base: "GBP", deposit: 100.66 },
-  { id: "p-2", base: "USD", deposit: 110.66 },
-  { id: "p-3", base: "EUR", deposit: 120.66 }
+  { id: "p-1", base: "GBP" },
+  { id: "p-2", base: "USD" },
+  { id: "p-3", base: "EUR" }
 ];
 const inPockets: Pocket[] = [
-  { id: "p-3", base: "EUR", deposit: 120.66 },
-  { id: "p-1", base: "GBP", deposit: 100.66 },
-  { id: "p-2", base: "USD", deposit: 110.66 }
+  { id: "p-3", base: "EUR" },
+  { id: "p-1", base: "GBP" },
+  { id: "p-2", base: "USD" }
 ];
 let timer: ReturnType<typeof setInterval>;
+// Used for converting the deposit of pockets
+let depositRate: number;
 // Export for unit testing
-export const errorMsg = "😭 Not enough money.";
+export const notEnoughMsg = "😭 Not enough money.";
+export const errorMsg = "😱 Something went wrong, please try again.";
 export const doneMsg = "🥳 Exchange is done.";
 
 export default () => {
   const dispatch = useDispatch();
   const [hasFetchData, setHasFetchData] = useState(false);
-  const [outIdx, setOutIdx] = useState(0);
-  const [inIdx, setInIdx] = useState(0);
   const [whichInput, setWhichInput] = useState("");
   const [inputVal, setInputVal] = useState("");
+  const [outIdx, setOutIdx] = useState(0);
+  const [inIdx, setInIdx] = useState(0);
   const outPocket = outPockets[outIdx];
   const inPocket = inPockets[inIdx];
+  const [deposits, setDeposits] = useState({
+    GBP: 100.66,
+    USD: 110.66,
+    EUR: 120.66
+  });
 
   useEffect(() => {
     if (!hasFetchData) {
@@ -60,11 +67,43 @@ export default () => {
     };
   }, [hasFetchData, dispatch]);
 
-  const handleExchange = () => {
-    const msg = parseFloat(inputVal) > outPocket.deposit ? errorMsg : doneMsg;
+  // Memorize the callback prop to prevent Pocket component from re-render
+  const setDepositRate = useCallback((rate: number) => {
+    depositRate = rate;
+  }, []);
 
-    alert(msg);
+  const handleExchange = () => {
+    const val = parseFloat(inputVal);
+    const outPocketDeposit = deposits[outPocket.base];
+    const inPocketDeposit = deposits[inPocket.base];
+
+    if (val > outPocketDeposit) {
+      alert(notEnoughMsg);
+      return;
+    }
+
+    // Make sure the value is available (API is OK)
+    if (!depositRate) {
+      alert(errorMsg);
+      return;
+    }
+
+    alert(doneMsg);
     setInputVal("");
+
+    if (whichInput === "EXCHANGE_OUT") {
+      setDeposits({
+        ...deposits,
+        [outPocket.base]: outPocketDeposit - val,
+        [inPocket.base]: inPocketDeposit + val * depositRate
+      });
+    } else {
+      setDeposits({
+        ...deposits,
+        [outPocket.base]: outPocketDeposit - val * depositRate,
+        [inPocket.base]: inPocketDeposit + val
+      });
+    }
   };
 
   const handleCarouselChange = (which: string) => (idx: number) => {
@@ -77,24 +116,35 @@ export default () => {
   };
 
   const renderPockets = (pockets: Pocket[], isExchangeIn: boolean = false) =>
-    pockets.map(({ id, deposit, base }) => (
-      <Pocket
-        key={id}
-        base={base}
-        deposit={deposit}
-        exchangeTo={isExchangeIn ? outPocket.base : inPocket.base}
-        exchangeDisabled={
-          isExchangeIn
-            ? whichInput === "EXCHANGE_IN"
-            : whichInput === "EXCHANGE_OUT"
-        }
-        isExchangeIn={isExchangeIn}
-        inputVal={inputVal}
-        onInputChange={handleInputChange(
-          isExchangeIn ? "EXCHANGE_IN" : "EXCHANGE_OUT"
-        )}
-      />
-    ));
+    pockets.map(({ id, base }) => {
+      const shouldSetDepositRate =
+        (isExchangeIn &&
+          whichInput === "EXCHANGE_IN" &&
+          inPocket.base === base) ||
+        (!isExchangeIn &&
+          whichInput === "EXCHANGE_OUT" &&
+          outPocket.base === base);
+
+      return (
+        <Pocket
+          key={id}
+          base={base}
+          deposit={deposits[base]}
+          exchangeTo={isExchangeIn ? outPocket.base : inPocket.base}
+          exchangeDisabled={
+            isExchangeIn
+              ? whichInput === "EXCHANGE_IN"
+              : whichInput === "EXCHANGE_OUT"
+          }
+          isExchangeIn={isExchangeIn}
+          inputVal={inputVal}
+          onInputChange={handleInputChange(
+            isExchangeIn ? "EXCHANGE_IN" : "EXCHANGE_OUT"
+          )}
+          setDepositRate={shouldSetDepositRate && setDepositRate}
+        />
+      );
+    });
 
   return (
     <div className={styles.app}>
@@ -104,7 +154,7 @@ export default () => {
           data-testid="exchange"
           className={styles.exchange}
           onClick={handleExchange}
-          disabled={!inputVal.length}
+          disabled={!inputVal.length || outPocket.base === inPocket.base}
         >
           Exchange
         </button>
