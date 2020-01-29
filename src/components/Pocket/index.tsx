@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, memo } from "react";
+import React, { ChangeEvent, useRef, useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 
 import { Base } from "../../types";
@@ -15,6 +15,7 @@ interface Props {
   isExchangeIn?: boolean;
   inputVal: string;
   onInputChange: (val: string) => void;
+  setDepositRate: ((rate: number) => void) | false;
 }
 
 const Pocket = ({
@@ -24,7 +25,8 @@ const Pocket = ({
   exchangeDisabled,
   isExchangeIn,
   inputVal,
-  onInputChange
+  onInputChange,
+  setDepositRate
 }: Props) => {
   const inputRef = useRef();
   const dispatch = useDispatch();
@@ -36,6 +38,13 @@ const Pocket = ({
     state => (state as any)[`${exchangeTo.toLowerCase()}Rate`],
     shallowEqual
   );
+
+  useEffect(() => {
+    const { readyStatus, data } = baseRateData;
+
+    if (setDepositRate && readyStatus === "success")
+      setDepositRate(data.rates[exchangeTo]);
+  }, [baseRateData, setDepositRate, exchangeTo]);
 
   // Override the default event of Carousel component
   // See: https://github.com/FormidableLabs/nuka-carousel/issues/406
@@ -123,7 +132,9 @@ const Pocket = ({
     <div className={styles.pocket}>
       <div>
         <div className={styles.base}>{base}</div>
-        <div>{`You have ${getSymbols(base)}${deposit}`}</div>
+        <div data-testid="deposit">{`You have ${getSymbols(base)}${formatDigits(
+          deposit
+        )}`}</div>
       </div>
       <div className={styles.inputWrapper}>
         {renderInput()}
