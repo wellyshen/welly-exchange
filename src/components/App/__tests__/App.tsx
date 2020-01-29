@@ -103,7 +103,7 @@ describe("<App />", () => {
     expect(getByTestId("exchange")).toHaveAttribute("disabled");
   });
 
-  it('should show a popup with error message if no the "depositRate"', () => {
+  it('should show a popup with error message if the "depositRate" is unavailable', () => {
     const { getByTestId, getAllByTestId } = renderHelper({
       gbpRate: { readyStatus: "failure" }
     });
@@ -114,7 +114,7 @@ describe("<App />", () => {
 
   it("should show a popup with not enough message if exchange > deposit", () => {
     const { getByTestId, getAllByTestId } = renderHelper();
-    fireEvent.change(getAllByTestId("input")[0], { target: { value: "168" } });
+    fireEvent.change(getAllByTestId("input")[0], { target: { value: "200" } });
     fireEvent.click(getByTestId("exchange"));
     expect(window.alert).toBeCalledWith(notEnoughMsg);
   });
@@ -164,16 +164,16 @@ describe("<App />", () => {
     expect(getAllByTestId("deposit")[1].textContent).toBe(usdPrefix + "110.66"); // USD
     expect(getAllByTestId("deposit")[3].textContent).toBe(eurPrefix + "120.66"); // EUR
 
-    let rate = eurRateData.rates["GBP"];
-    let deposit = formatDigits(100.66 - rate);
+    let depositRate = eurRateData.rates["GBP"];
+    let deposit = formatDigits(100.66 - depositRate);
     fireEvent.change(getAllByTestId("input")[3], { target: { value: "1" } });
     fireEvent.click(getByTestId("exchange"));
     expect(getAllByTestId("deposit")[0].textContent).toBe(gbpPrefix + deposit);
     expect(getAllByTestId("deposit")[3].textContent).toBe(eurPrefix + "121.66");
 
     // Make sure exchange to USD correctly
-    rate = eurRateData.rates["USD"];
-    deposit = formatDigits(110.66 - rate);
+    depositRate = eurRateData.rates["USD"];
+    deposit = formatDigits(110.66 - depositRate);
     fireEvent.change(getAllByTestId("input")[3], { target: { value: "1" } });
     // Align EUR to USD
     const topCenterDot = getAllByLabelText("slide 2 bullet")[0];
