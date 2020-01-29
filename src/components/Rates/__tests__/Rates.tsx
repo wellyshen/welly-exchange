@@ -50,6 +50,8 @@ describe("<Rates />", () => {
     const { getByTestId, dispatch } = renderHelper({ readyStatus: "failure" });
     fireEvent.click(getByTestId("rates"));
     // @ts-ignore
-    expect(dispatch.mock.calls[0][0].toString()).toBe(fetchRate("GBP").toString());
+    expect(dispatch.mock.calls[0][0].toString()).toBe(
+      fetchRate("GBP").toString()
+    );
   });
 });

@@ -73,7 +73,8 @@ describe("<Pocket />", () => {
     // @ts-ignore
     expect(getAllByTestId("input")[0].value).toBe("+1.19");
 
-    getAllByTestId = renderHelper({ props: { isExchangeIn: false } }).getAllByTestId;
+    getAllByTestId = renderHelper({ props: { isExchangeIn: false } })
+      .getAllByTestId;
     // @ts-ignore
     expect(getAllByTestId("input")[1].value).toBe("-1.19");
   });
@@ -83,7 +84,8 @@ describe("<Pocket />", () => {
     // @ts-ignore
     expect(getAllByTestId("input")[0].value).toBe("+1.19");
 
-    getAllByTestId = renderHelper({ props: { exchangeDisabled: true } }).getAllByTestId;
+    getAllByTestId = renderHelper({ props: { exchangeDisabled: true } })
+      .getAllByTestId;
     // @ts-ignore
     expect(getAllByTestId("input")[1].value).toBe("+1");
   });
