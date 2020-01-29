@@ -91,24 +91,6 @@ describe("<Pocket />", () => {
     expect(getAllByTestId("input")[1].value).toBe("+1");
   });
 
-  it("should render deposit with two digits correctly", () => {
-    const prefix = "You have €";
-    let getAllByTestId = renderHelper({ props: { deposit: "100.6" } })
-      .getAllByTestId;
-    // @ts-ignore
-    expect(getAllByTestId("deposit")[0].textContent).toBe(prefix + "100.6");
-
-    getAllByTestId = renderHelper({ props: { deposit: "100.66" } })
-      .getAllByTestId;
-    // @ts-ignore
-    expect(getAllByTestId("deposit")[1].textContent).toBe(prefix + "100.66");
-
-    getAllByTestId = renderHelper({ props: { deposit: "100.666" } })
-      .getAllByTestId;
-    // @ts-ignore
-    expect(getAllByTestId("deposit")[2].textContent).toBe(prefix + "100.67");
-  });
-
   it("should render input value with two digits correctly", () => {
     let getAllByTestId = renderHelper({
       props: { inputVal: "1.6", exchangeDisabled: true }
