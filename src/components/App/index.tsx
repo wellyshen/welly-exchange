@@ -4,6 +4,7 @@ import Carousel from "nuka-carousel";
 
 import { Base } from "../../types";
 import fetchRate from "../../actions/fetchRate";
+import formatDigits from "../../utils/formatDigits";
 import Rates from "../Rates";
 import Pocket from "../Pocket";
 import styles from "./styles.module.scss";
@@ -41,9 +42,9 @@ export default () => {
   const outPocket = outPockets[outIdx];
   const inPocket = inPockets[inIdx];
   const [deposits, setDeposits] = useState({
-    GBP: 100.66,
-    USD: 110.66,
-    EUR: 120.66
+    GBP: "100.66",
+    USD: "110.66",
+    EUR: "120.66"
   });
 
   useEffect(() => {
@@ -74,10 +75,11 @@ export default () => {
 
   const handleExchange = () => {
     const val = parseFloat(inputVal);
-    const outPocketDeposit = deposits[outPocket.base];
-    const inPocketDeposit = deposits[inPocket.base];
+    const outPocketDeposit = parseFloat(deposits[outPocket.base]);
+    const inPocketDeposit = parseFloat(deposits[inPocket.base]);
+    const exchangeVal = whichInput === "EXCHANGE_OUT" ? val : val * depositRate;
 
-    if (val > outPocketDeposit) {
+    if (exchangeVal > outPocketDeposit) {
       alert(notEnoughMsg);
       return;
     }
@@ -91,19 +93,14 @@ export default () => {
     alert(doneMsg);
     setInputVal("");
 
-    if (whichInput === "EXCHANGE_OUT") {
-      setDeposits({
-        ...deposits,
-        [outPocket.base]: outPocketDeposit - val,
-        [inPocket.base]: inPocketDeposit + val * depositRate
-      });
-    } else {
-      setDeposits({
-        ...deposits,
-        [outPocket.base]: outPocketDeposit - val * depositRate,
-        [inPocket.base]: inPocketDeposit + val
-      });
-    }
+    const outVal = whichInput === "EXCHANGE_OUT" ? val : val * depositRate;
+    const inVal = whichInput === "EXCHANGE_IN" ? val : val * depositRate;
+
+    setDeposits({
+      ...deposits,
+      [outPocket.base]: formatDigits(outPocketDeposit - outVal),
+      [inPocket.base]: formatDigits(inPocketDeposit + inVal)
+    });
   };
 
   const handleCarouselChange = (which: string) => (idx: number) => {
