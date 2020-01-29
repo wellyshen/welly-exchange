@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 
 interface Props {
   base: Base;
-  deposit: number;
+  deposit: string;
   exchangeTo: Base;
   exchangeDisabled: boolean;
   isExchangeIn?: boolean;
@@ -132,9 +132,7 @@ const Pocket = ({
     <div className={styles.pocket}>
       <div>
         <div className={styles.base}>{base}</div>
-        <div data-testid="deposit">{`You have ${getSymbols(base)}${formatDigits(
-          deposit
-        )}`}</div>
+        <div data-testid="deposit">{`You have ${getSymbols(base)}${deposit}`}</div>
       </div>
       <div className={styles.inputWrapper}>
         {renderInput()}
