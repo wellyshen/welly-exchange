@@ -3,6 +3,11 @@ language: node_js
 node_js:
   - "lts/*"
 
+branches:
+  only:
+    - master
+    - /^feature.*$/
+
 cache:
   yarn: true
   directories:
@@ -11,10 +16,6 @@ cache:
 script:
   - yarn lint
   - yarn test:cov
-
-notifications:
-  email:
-    on_failure: change
 
 after_success:
   - yarn coveralls
@@ -29,3 +30,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+
+notifications:
+  email:
+    on_failure: change
