@@ -151,7 +151,7 @@ export default () => {
           data-testid="exchange"
           className={styles.exchange}
           onClick={handleExchange}
-          disabled={!inputVal.length || outPocket.base === inPocket.base}
+          disabled={!inputVal || outPocket.base === inPocket.base}
         >
           Exchange
         </button>

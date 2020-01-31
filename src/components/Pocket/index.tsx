@@ -67,7 +67,7 @@ const Pocket = ({
   };
 
   const getInputVal = (rate: number) => {
-    if (!inputVal.length) return "";
+    if (!inputVal) return "";
     // When user enter "." at the beginning, pre-pend zero for better UX
     if (inputVal === ".") inputVal = "0" + inputVal;
 
