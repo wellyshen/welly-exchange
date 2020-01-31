@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "nuka-carousel": "^4.6.2",
+    "nuka-carousel": "4.6.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
