@@ -26,7 +26,6 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
     <div
       class="slider"
       style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
-      tabindex="0"
     >
       <div
         aria-atomic="true"
@@ -42,12 +41,11 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
       >
         <ul
           class="slider-list"
-          style="box-sizing: border-box; cursor: pointer; display: block; height: 0px; margin: 0px 0px; padding: 0px; position: relative; transform: translate3d(0px, 0px, 0); width: auto;"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
         >
           <li
             class="slider-slide slide-visible"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -78,9 +76,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -111,9 +107,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -182,7 +176,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 1 bullet"
-              style="cursor: pointer; opacity: 1; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 1; background: transparent;"
               type="button"
             >
               <svg
@@ -194,6 +188,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -203,7 +198,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 2 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -215,6 +210,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -224,7 +220,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 3 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -236,6 +232,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -252,7 +249,6 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
     <div
       class="slider"
       style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
-      tabindex="0"
     >
       <div
         aria-atomic="true"
@@ -268,13 +264,11 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
       >
         <ul
           class="slider-list"
-          style="box-sizing: border-box; cursor: pointer; display: block; height: 0px; margin: 0px 0px; padding: 0px; position: relative; transform: translate3d(0px, 0px, 0); width: auto;"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
         >
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -311,7 +305,6 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           <li
             class="slider-slide slide-visible"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -347,9 +340,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -422,7 +413,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 1 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -434,6 +425,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -443,7 +435,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 2 bullet"
-              style="cursor: pointer; opacity: 1; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 1; background: transparent;"
               type="button"
             >
               <svg
@@ -455,6 +447,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -464,7 +457,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
           >
             <button
               aria-label="slide 3 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -476,6 +469,7 @@ exports[`<App /> should render correctly after changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -519,7 +513,6 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
     <div
       class="slider"
       style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
-      tabindex="0"
     >
       <div
         aria-atomic="true"
@@ -535,12 +528,11 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
       >
         <ul
           class="slider-list"
-          style="box-sizing: border-box; cursor: pointer; display: block; height: 0px; margin: 0px 0px; padding: 0px; position: relative; transform: translate3d(0px, 0px, 0); width: auto;"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
         >
           <li
             class="slider-slide slide-visible"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -571,9 +563,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -604,9 +594,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -675,7 +663,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 1 bullet"
-              style="cursor: pointer; opacity: 1; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 1; background: transparent;"
               type="button"
             >
               <svg
@@ -687,6 +675,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -696,7 +685,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 2 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -708,6 +697,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -717,7 +707,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 3 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -729,6 +719,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -745,7 +736,6 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
     <div
       class="slider"
       style="box-sizing: border-box; display: block; height: inherit; position: relative; width: 100%;"
-      tabindex="0"
     >
       <div
         aria-atomic="true"
@@ -761,12 +751,11 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
       >
         <ul
           class="slider-list"
-          style="box-sizing: border-box; cursor: pointer; display: block; height: 0px; margin: 0px 0px; padding: 0px; position: relative; transform: translate3d(0px, 0px, 0); width: auto;"
+          style="transform: translate3d(0px, 0px, 0); position: relative; display: block; margin: 0px 0px; padding: 0px; height: 0px; width: 0px; cursor: pointer; box-sizing: border-box;"
         >
           <li
             class="slider-slide slide-visible"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -802,9 +791,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -840,9 +827,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           </li>
           <li
             class="slider-slide"
-            inert="true"
             style="box-sizing: border-box; display: inline-block; height: auto; left: 0px; list-style-type: none; margin: auto 0px auto 0px; position: absolute; top: 0px; transform: scale(1); transition: transform .4s linear; vertical-align: top; width: 0px;"
-            tabindex="-1"
           >
             <div
               class="pocket"
@@ -916,7 +901,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 1 bullet"
-              style="cursor: pointer; opacity: 1; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 1; background: transparent;"
               type="button"
             >
               <svg
@@ -928,6 +913,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -937,7 +923,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 2 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -949,6 +935,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
@@ -958,7 +945,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
           >
             <button
               aria-label="slide 3 bullet"
-              style="cursor: pointer; opacity: 0.5; background: transparent; fill: black;"
+              style="cursor: pointer; opacity: 0.5; background: transparent;"
               type="button"
             >
               <svg
@@ -970,6 +957,7 @@ exports[`<App /> should render correctly before changing pocket 1`] = `
                   cx="3"
                   cy="3"
                   r="3"
+                  style="fill: black;"
                 />
               </svg>
             </button>
