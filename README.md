@@ -10,7 +10,7 @@ Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. Th
 ## Features
 
 - ⚛️ Made by [React](https://reactjs.org) and [Redux](https://redux.js.org).
-- 🎣 Based functional components and [Hooks](https://reactjs.org/docs/hooks-intro.html).
+- 🎣 Based on functional components and [Hooks](https://reactjs.org/docs/hooks-intro.html).
 - 💅🏻 Using [Sass](https://sass-lang.com) and [CSS modules](https://github.com/gajus/react-css-modules) for styling.
 - 🧐 Runtime type-checks via [Typescript](https://www.typescriptlang.org).
 - 🧪 Using [Jest](https://jestjs.io) and [React Test Library](https://testing-library.com/docs/react-testing-library/intro) for unit testing.
