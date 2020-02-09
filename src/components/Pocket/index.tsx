@@ -71,10 +71,10 @@ const Pocket = ({
     // When user enter "." at the beginning, pre-pend zero for better UX
     if (inputVal === ".") inputVal = "0" + inputVal;
 
-    const preFix = isExchangeIn ? "+" : "-";
+    const prefix = isExchangeIn ? "+" : "-";
     const val = exchangeDisabled ? inputVal : parseFloat(inputVal) * rate;
 
-    return preFix + formatDigits(val);
+    return prefix + formatDigits(val);
   };
 
   const renderInput = () => {
