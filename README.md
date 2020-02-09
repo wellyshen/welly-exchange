@@ -147,4 +147,4 @@ In my spare time, I like to contribute and maintain OSS for making people coding
 - 😎🐣 [react-cool-starter](https://github.com/wellyshen/react-cool-starter): A starter boilerplate for a universal (SSR) web app.
 - 😎🏞 [react-cool-img](https://github.com/wellyshen/react-cool-img): A React <Img /> component let you handle image UX and performance as a Pro! (Collected by [CSS-Tricks](https://css-tricks.com/third-party-components-at-their-best))
 - 😎🖱 [react-cool-onclickoutside](https://github.com/wellyshen/react-cool-onclickoutside): A React hook to listen for clicks outside of the component(s). (Collected by [React Status](https://twitter.com/reactdaily/status/1220032630172934144?s=20))
-- 😎📍 [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete): React hook for Google Maps Places Autocomplete. (In progress)
+- 😎📍 [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete): React hook for Google Maps Places Autocomplete.
