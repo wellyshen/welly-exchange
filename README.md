@@ -1,11 +1,12 @@
 # Welly Exchange
 
-Thanks for [Revolut](https://www.revolut.com) giving me this home assignment. The topic is interesting and I have learned a lot from it 👍🏻
+A funny currency exchange app made by React.
 
 ⚡️ Live demo: https://welly-exchange.netlify.com
 
 [![build status](https://img.shields.io/travis/wellyshen/welly-exchange/master?style=flat-square)](https://travis-ci.org/wellyshen/welly-exchange)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/welly-exchange?style=flat-square)](https://coveralls.io/github/wellyshen/welly-exchange?branch=master)
+[![MIT licensed](https://img.shields.io/github/license/wellyshen/welly-exchange?style=flat-square)](https://raw.githubusercontent.com/wellyshen/welly-exchange/master/LICENSE)
 
 ## Features
 
@@ -145,6 +146,6 @@ Netlify provide an [auto deploy feature](https://docs.netlify.com/site-deploys/c
 In my spare time, I like to contribute and maintain OSS for making people coding happier. You can check the following repositories to know more about me.
 
 - 😎🐣 [react-cool-starter](https://github.com/wellyshen/react-cool-starter): A starter boilerplate for a universal (SSR) web app.
+- 😎📍 [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete): React hook for Google Maps Places Autocomplete.
 - 😎🏞 [react-cool-img](https://github.com/wellyshen/react-cool-img): A React <Img /> component let you handle image UX and performance as a Pro! (Collected by [CSS-Tricks](https://css-tricks.com/third-party-components-at-their-best))
 - 😎🖱 [react-cool-onclickoutside](https://github.com/wellyshen/react-cool-onclickoutside): A React hook to listen for clicks outside of the component(s). (Collected by [React Status](https://twitter.com/reactdaily/status/1220032630172934144?s=20))
-- 😎📍 [use-places-autocomplete](https://github.com/wellyshen/use-places-autocomplete): React hook for Google Maps Places Autocomplete.

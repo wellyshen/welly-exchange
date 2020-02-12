@@ -1,7 +1,8 @@
 {
   "name": "welly-exchange",
   "version": "1.0.0",
-  "private": true,
+  "description": "A currency exchange app made by React.",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
